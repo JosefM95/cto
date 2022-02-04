@@ -1,0 +1,9 @@
+{
+  "name": "sage-math",
+
+  "styles": ["styles.css"],
+
+  "scripts": ["script.js"],
+
+  "html": "fragment-%lang%.html"
+}
