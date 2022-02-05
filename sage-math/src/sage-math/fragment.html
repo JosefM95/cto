@@ -6,7 +6,62 @@
     <a href="https://cryptool.org/cto" target="_blank">CrypTool-Online</a>.
   </p>
 
-  <hr />
+  <div class="thebe-activate"></div>
+  <div class="thebe-status"></div>
+
+  <br />
+
+  <pre data-exutable="true" data-language="python">print("Hello!")</pre>
+  <pre data-output="true"></pre>
 
   <p class="text-center">${{ sage-math.author }}$: CrypTool Team</p>
 </div>
+
+<script type="text/x-thebe-config">
+  {
+    // Whether thebe should automatically trigger the bootstrap upon page load
+    // if set to false, the page should contain some additional javascript
+    // responsible for triggering the javascript when desired (e.g. connected to a button click).
+    bootstrap: false,
+
+    // arbitrary pre-render function called as part of bootstrap
+    preRenderHook: false,
+
+    // Whether to request the kernel immediately when thebe is bootstrapped
+    // instead of on executing code for the first time
+    requestKernel: true,
+
+    // Whether thebe should look for predefined output of cells before execution
+    // If this option is enabled and the next div after the cell has the attribute
+    // data-output=true (default), then the content of this div is rendered as output
+    predefinedOutput: true,
+
+    // The selector for identifying whether an element should be treated as output
+    outputSelector: '[data-output]',
+
+    // Options for requesting a kernel from the notebook server
+    kernelOptions: {
+      name: "sagemath",
+      // notebook server configuration; not needed with binder
+      serverSettings: {
+            "baseUrl": "http://127.0.0.1:8888",
+            "token": "712e77b915c5b45fe2b2f8fffe3731ba"
+      }
+    },
+
+    // Selector for identifying which elements on the page should
+    // be made interactive
+    selector: "[data-executable]",
+
+    // Optional prompt handling during the rendering phase
+    // Either false or a dictionary as in the example below
+    stripPrompts: false,
+    // stripPrompts: {
+    //      inPrompt: 'sage: ',
+    //      continuationPrompt: '....: ',
+    //      // only apply the prompt stripping to cells matching this selector (optional)
+    //      selector: '.sage-input',
+    //    },
+  }
+</script>
+<script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
